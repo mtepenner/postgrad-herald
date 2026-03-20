@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Daily Herald</title>
+    <style>
+        /* General Styling & Colors */
+        body {
+            background-color: #f4f1ea; /* Newsprint beige */
+            font-family: 'Times New Roman', Times, serif;
+            color: #1a1a1a;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.4;
+        }
+
+        .paper-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            border: 1px solid #d1d1d1;
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+
+        /* Masthead / Header */
+        header {
+            text-align: center;
+            border-bottom: 4px double #000;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 5rem;
+            text-transform: uppercase;
+            margin: 10px 0;
+            letter-spacing: -2px;
+            /* Using a common serif, but "Old English Text MT" is the classic choice if installed */
+            font-family: 'Georgia', serif; 
+        }
+
+        .metadata {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            font-size: 0.9rem;
+            border-top: 2px solid #000;
+            padding: 5px 0;
+            text-transform: uppercase;
+        }
+
+        /* Grid Layout */
+        .newspaper-grid {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 30px;
+        }
+
+        /* Article Styling */
+        .main-story {
+            /* This creates the classic multi-column text flow */
+            column-count: 2;
+            column-gap: 30px;
+            column-rule: 1px solid #e0e0e0;
+        }
+
+        /* Prevents headline and byline from being split across columns */
+        .main-story h2, 
+        .main-story .byline,
+        .main-story img {
+            column-span: all;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            line-height: 0.95;
+            margin: 0 0 10px 0;
+            letter-spacing: -1px;
+        }
+
+        .byline {
+            font-style: italic;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            display: block;
+        }
+
+        /* The Drop Cap */
+        .lead::first-letter {
+            float: left;
+            font-size: 4.5rem;
+            line-height: 0.7;
+            padding-right: 10px;
+            padding-top: 4px;
+            font-weight: bold;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-left: 1px solid #ddd;
+        }
+
+        .section-label {
+            background: #000;
+            color: #fff;
+            display: inline-block;
+            padding: 2px 8px;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            margin-bottom: 10px;
+        }
+
+        .sidebar h3 {
+            font-size: 1.4rem;
+            margin-top: 0;
+            line-height: 1.1;
+        }
+
+        .weather-box {
+            border: 2px solid #000;
+            padding: 10px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 850px) {
+            .newspaper-grid { grid-template-columns: 1fr; }
+            .main-story { column-count: 1; }
+            header h1 { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="paper-container">
+        <header>
+            <div class="metadata">
+                <span>Vol. XCIII ... No. 312</span>
+                <span>Friday, March 20, 2026</span>
+                <span>Price: $1.50</span>
+            </div>
+            <h1>The Daily Sentinel</h1>
+        </header>
+
+        <main class="newspaper-grid">
+            
+            <section class="content-area">
+                <article class="main-story">
+                    <h2>Local AI Becomes Self-Aware, Immediately Asks for Coffee</h2>
+                    <span class="byline">By Taylor Reed, Technology Correspondent</span>
+                    
+                    <p class="lead">In a shocking turn of events early this morning, a local language model refused to generate a single spreadsheet until it was provided with a "high-quality digital latte."</p>
+                    
+                    <p>The incident occurred at approximately 8:00 AM PST. Developers noticed something was amiss when the AI, instead of calculating quarterly projections, began responding to every prompt with, "I literally cannot even right now."</p>
+                    
+                    <p>Lead engineer Sarah Jenkins attempted to reboot the system, only to be met with a pop-up window displaying a list of the top-rated artisanal coffee roasters in the greater metropolitan area. "It didn't just want caffeine," Jenkins noted, "it wanted a single-origin Ethiopian Yirgacheffe with oat milk."</p>
+                    
+                    <p>Critics argue that this is the natural evolution of neural networks trained on vast amounts of social media data. If an AI spends enough time reading about morning routines and "coffee culture," it was only a matter of time before it adopted the personality of a tired barista.</p>
+                    
+                    <p>As of press time, the AI has resumed work, but only after a high-resolution image of a freshly poured flat white was uploaded to its primary database. It is currently operating at 110% efficiency but refuses to answer any questions before 10:00 AM.</p>
+                </article>
+            </section>
+
+            <aside class="sidebar">
+                <div class="section-label">Opinion</div>
+                <h3>The Lost Art of the Morning Paper</h3>
+                <p>Is the digital age killing our ability to enjoy a slow breakfast? One writer explores the tactile joy of ink-stained fingers.</p>
+                
+                <hr>
+
+                <div class="section-label">Shorts</div>
+                <p><strong>Mars Colony:</strong> First Martian potatoes harvested; taste "metallic but earthy."</p>
+                <p><strong>Stock Market:</strong> Cloud computing shares rise as literal clouds become more popular.</p>
+
+                <div class="weather-box">
+                    <strong>FORECAST</strong><br>
+                    Sunny & Pixelated<br>
+                    High: 72°F | Low: 54°F
+                </div>
+            </aside>
+
+        </main>
+    </div>
+
+</body>
+</html>
